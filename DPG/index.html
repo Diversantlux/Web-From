@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="style/style.css" type="text/css" />
+	<title>Test DPG</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="box">
+				<div class="title">
+					<h1>Hello</h1>
+				</div>
+				<div class="forma">
+					<div class="form-title">
+						<h3>For business enquiries please use the form below</h3>
+						<span class="form-title-span">* Required</span>
+					</div>
+					<form class="contact_form" action="#" method="post" name="contact_form">
+						<ul>
+
+								<li>
+										<label for="name">Name*</label>
+										<input type="text"  placeholder="Alex World" />
+								</li>
+								<li>
+									<label for="name">Company*</label>
+									<input type="text" />
+							</li>
+								<li>
+										<label for="email">E-mail*</label>
+										<input type="email" name="email" placeholder="diversantlux@gmail.com"  />
+										<span class="form_hint">Proper format "name@gmail.com"</span>
+								</li>
+								<li>
+									
+									<label for="phone">Phone:</label>
+                <input type="text" placeholder="+1-234-567-8901"
+                        pattern="\+\d-\d{3}-\d{3}-\d{4}" id="phone" name="phone" />
+							</li>
+								<li>
+										<label for="website">Subject</label>
+										<input type="text" name="Subject"/>
+								</li>
+								<li>
+										<label for="message">Message*</label>
+										<textarea id="text_area" rows="2" onkeyup="textarea_resize(event, 15, 2);"></textarea>
+										<div id="text_area_div"></div>
+								</li>
+								<label class="cbx">I accept <a href=""> Terms and Privacy Policy</a> 
+									<input type="checkbox" />
+									<span></span>
+								</label>
+								
+						</ul>
+						<div class="btn">
+							
+								<button type="submit">Send</button>
+
+						</div>
+				</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	function textarea_resize(event, line_height, min_line_count)
+{
+  var min_line_height = min_line_count * line_height;
+  var obj = event.target;
+  var div = document.getElementById(obj.id + '_div');
+  div.innerHTML = obj.value;
+  var obj_height = div.offsetHeight;
+  if (event.keyCode == 13)
+    obj_height += line_height;
+  else if (obj_height < min_line_height)
+    obj_height = min_line_height;
+  obj.style.height = obj_height + 'px';
+}
+</script>
+</body>
+
+</html>
